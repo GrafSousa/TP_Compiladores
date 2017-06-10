@@ -1,0 +1,11 @@
+program
+	integer : i;
+begin
+	i := 20;
+	while (1 > 10) do
+		write(i+10);
+		i := i - 1
+	endwhile;
+	write i
+end
+

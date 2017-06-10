@@ -1,0 +1,28 @@
+procedure multiplymatrices(va1ue matrix:m1, value matrixzml, reference matrix: product):
+	integer : i, k, j;
+	integer : cross;
+begin
+	i := 1;
+	repeat
+		j := 1;
+		while j <= 10 do
+			cross := O;
+			k := 1;
+			while k <= 10 do
+				cross := cross + m1(i,k) * m2(k,j);
+		k := k + 1
+			endwhile;
+			product(i, j) := cross;
+			j := j + 1
+		endwhile
+	until i = 2
+end;
+begin
+	read a;
+	read b;
+	multiplymatrices(a, b, ab);
+	write(ab)
+end
+
+
+

@@ -1,0 +1,26 @@
+procedure multiplymatrices(value matrixzml, value matrixzm2, reference matrixzproduct):
+	integer : i, k, j;
+	integer : cross;
+begin
+	i := 1;
+	repeat
+		i := i + 1;
+		j := 1;
+		while j <= 2 do
+			cross := O;
+			k := 1;
+			while k <= 2 do
+				cross := cross + m1(i,k) * m2(k,j);
+		k := k + 1
+			endwhile;
+			product(i, j) := cross;
+			j := j + 1
+		endwhile
+	until i = 2
+end;
+begin
+	readmatrix(a);
+	readmatrix(b);
+	multiplymatrices(a, b, ab);
+	writematrix(ab)
+end

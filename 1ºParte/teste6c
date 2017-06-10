@@ -1,0 +1,12 @@
+/*1.9 Teste 7: comando REPEAT - ERRO DE TIPO (condição do repeat)*/
+program
+	integer : weight, group;
+	integer : charge;
+	integer : distance;
+begin
+	weight := O;
+	repeat
+		weight := weight + 1;
+		group := group * 2
+	until weight + 10
+end
