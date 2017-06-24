@@ -5,7 +5,7 @@
 #include <string.h>
 #include "y.tab.h"
 
-int lno = 0;
+int lno = 1;
 char *yylval;
 FILE *yyin;
 
@@ -25,8 +25,9 @@ true true
 boolean({true}|{false})
 exp [*][*]
 comentario[\/][\*].*[\*][\/]
-ID [a-zA-Z][a-zA-Z0-9]*
+ID [a-zA-Z][a-zA-Z0-9]{0,31}
 linha [\n]
+at [\:][\=]
 %%
 
 {ws} {/*nenhuma acao e nenhum retorno*/}
@@ -38,8 +39,8 @@ integer {yylval = strdup(yytext);return INTEGER;}
 "not=" {yylval = strdup(yytext);return NOTEQUAL;}
 ";" {yylval = strdup(yytext);return PV;}
 ":" {yylval = strdup(yytext);return DP;}
+{at} {yylval = strdup(yytext);return ATRIBUICAO;}
 "," {yylval = strdup(yytext);return VIRGULA;}
-":=" {yylval = strdup(yytext);return ATRIBUICAO;}
 "(" {yylval = strdup(yytext);return ABREPARENTESE;}
 ")" {yylval = strdup(yytext);return FECHAPARENTESE;}
 {boolean} {yylval = strdup(yytext);return BOOLEAN;}
@@ -65,7 +66,6 @@ write {yylval = strdup(yytext);return WRITE;}
 while {yylval = strdup(yytext);return WHILE;}
 "<" {yylval = strdup(yytext);return MENOR;}
 ">" {yylval = strdup(yytext);return MAIOR;}
-"=" {yylval = strdup(yytext);return IGUAL;}
 "<=" {yylval = strdup(yytext);return MENORIGUAL;}
 ">=" {yylval = strdup(yytext);return MAIORIGUAL;}
 {exp} {yylval = strdup(yytext);return EXP;}

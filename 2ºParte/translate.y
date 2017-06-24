@@ -209,8 +209,8 @@ expr 			: expr OR M0 expr
 constante 		: int_ou_char
 			| booleano
 			;
-int_ou_char 		: INTEIRO
-			| CHAR
+int_ou_char 		: NUMBER
+			| ID
 			;
 inteiro 		: NUMBER
 			;
@@ -234,7 +234,7 @@ void yyerror( char *s ){
 void imprimeProg(){
   char url[] = "entrada1.txt";
   char info[50];
-  int num_linhas = 0;
+  int num_linhas = 1;
   yyin = fopen(url, "r");
 
   if(yyin == NULL )

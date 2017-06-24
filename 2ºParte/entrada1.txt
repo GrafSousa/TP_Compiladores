@@ -1,6 +1,11 @@
 program
 	    integer : group;
 	    integer : group2;
-begi
+	    integer : weight;
+	    char : wesley;
+	    char : gustavo;
+
+begin
+  group := 100;
   write charge
 end
