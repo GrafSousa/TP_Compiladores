@@ -1,0 +1,5 @@
+#!/bin/bash
+
+flex lex.l
+yacc -d translate.y 
+gcc lex.yy.c y.tab.c
